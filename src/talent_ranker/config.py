@@ -13,3 +13,10 @@ REQUIRED_COLUMNS = ["id", "job_title", "location", "connection"]
 KEYWORDS = ["aspiring human resources", "seeking human resources"]
 
 RANDOM_STATE = 42
+
+
+# Automatic labelling from the TF-IDF similarity score (see notebooks/02_auto_labelling.ipynb).
+# At or above FIT_MIN_SCORE -> label 1; at or below NOT_FIT_MAX_SCORE -> label 0;
+# in between -> no label (too uncertain to teach a model).
+FIT_MIN_SCORE = 0.3
+NOT_FIT_MAX_SCORE = 0.0
