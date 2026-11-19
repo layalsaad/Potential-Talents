@@ -20,3 +20,7 @@ RANDOM_STATE = 42
 # in between -> no label (too uncertain to teach a model).
 FIT_MIN_SCORE = 0.3
 NOT_FIT_MAX_SCORE = 0.0
+
+
+# Pretrained word vectors (downloaded once by gensim, cached in ~/gensim-data).
+WORD_VECTORS = "glove-wiki-gigaword-100"

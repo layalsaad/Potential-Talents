@@ -31,3 +31,11 @@ def tfidf_similarity(
     keyword_vectors = vectorizer.transform(keywords)
     scores = cosine_similarity(title_vectors, keyword_vectors).max(axis=1)
     return pd.Series(scores, index=titles.index, name="similarity")
+
+
+def idf_weights(titles: pd.Series) -> dict[str, float]:
+    """IDF weight of every word in the titles: rare words get high weights."""
+    vectorizer = TfidfVectorizer(preprocessor=normalize_text, stop_words="english").fit(
+        titles
+    )
+    return dict(zip(vectorizer.get_feature_names_out(), vectorizer.idf_, strict=True))
