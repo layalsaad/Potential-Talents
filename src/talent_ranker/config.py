@@ -24,3 +24,8 @@ NOT_FIT_MAX_SCORE = 0.0
 
 # Pretrained word vectors (downloaded once by gensim, cached in ~/gensim-data).
 WORD_VECTORS = "glove-wiki-gigaword-100"
+
+
+# Logistic regression strength. Not tuned: the automatic labels are perfectly separable, so
+# cross-validation always prefers weaker regularization, i.e. a more overconfident copy of them.
+MODEL_C = 1.0
